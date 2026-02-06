@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+      <img src="images/EstradaOfficialLogo.png" alt="Estrada Accounting Logo" height="50" class="me-2">
+      Estrada Accounting & Bookkeeping Services
+    </a>
+
+    <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        
+        <a class="nav-link consultation-link" href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#consultationModal">
+          Book A Consultation
+        </a>
+
+
+
+        <!-- <li class="nav-item">
+        <a class="nav-link consultation-link" href="#">
+            <i class="bi bi-calendar-event me-1"></i> Book A Consultation
+        </a>
+        </li> -->
+        <!-- Notification Icon -->
+        <!-- Notification Bell -->
+        <li class="nav-item position-relative">
+          <a class="nav-link d-flex align-items-center" href="notifications.html">
+            <i class="bi bi-bell fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              3
+              <span class="visually-hidden">unread notifications</span>
+            </span>
+          </a>
+        </li>
+
+        <!-- User Login Icon -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="signin.html">
+            <i class="bi bi-person-circle me-1"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!-- BOOK CONSULTATION MODAL -->
+<div class="modal fade" id="consultationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">
+          <i class="bi bi-calendar-event me-2 text-gold"></i>
+          Book a Consultation
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" required>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Contact Number</label>
+              <input type="tel" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Service Needed</label>
+              <select class="form-select">
+                <option selected disabled>Select Service</option>
+                <option>Bookkeeping</option>
+                <option>Accounting</option>
+                <option>Tax Preparation</option>
+                <option>Payroll</option>
+                <option>Business Registration</option>
+                <option>Compliance Services</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Preferred Date</label>
+              <input type="date" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Preferred Time</label>
+              <input type="time" class="form-control">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Additional Notes</label>
+              <textarea class="form-control" rows="3"
+                placeholder="Tell us about your business or concerns..."></textarea>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-gold">
+          <i class="bi bi-check-circle me-1"></i>
+          Submit Request
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- HERO -->
+<section class="hero text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold">
+      Trusted <span>Accounting & Bookkeeping</span><br>
+      Services for Your Business
+    </h1>
+    <p class="lead mt-3 mb-4">
+      Accurate. Reliable. Professional Financial Solutions.
+    </p>
+    <a href="#" class="btn btn-gold btn-lg">Schedule for a Consultation</a>
+  </div>
+</section>
+
+<!-- CLIENTS & STATS -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center section-title mb-5">Our Impact</h2>
+    <div class="row text-center g-4">
+
+      <div class="col-md-3 col-6">
+        <div class="card shadow-sm p-4 h-100 border-0 text-center impact-card">
+          <div class="mb-3">
+            <i class="bi bi-people-fill fs-1 text-gold"></i>
+          </div>
+          <h3 class="fw-bold text-gold">400+</h3>
+          <p class="mb-0">Clients Served</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="card shadow-sm p-4 h-100 border-0 text-center impact-card">
+          <div class="mb-3">
+            <i class="bi bi-clock-fill fs-1 text-gold"></i>
+          </div>
+          <h3 class="fw-bold text-gold">8 years</h3>
+          <p class="mb-0">Years of Experience</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 mx-auto">
+        <div class="card shadow-sm p-4 h-100 border-0 text-center impact-card">
+          <div class="mb-3">
+            <i class="bi bi-briefcase-fill fs-1 text-gold"></i>
+          </div>
+          <h3 class="fw-bold text-gold">20+</h3>
+          <p class="mb-0">No. of Services Offered</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 mx-auto">
+        <div class="card shadow-sm p-4 h-100 border-0 text-center impact-card">
+          <div class="mb-3">
+            <i class="bi bi-building fs-1 text-gold"></i>
+          </div>
+          <h3 class="fw-bold text-gold">300+</h3>
+          <p class="mb-0">Current Clients</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SERVICES -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center section-title mb-5">Our Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 text-center p-4">
+          <h5>Bookkeeping</h5>
+          <p>Monthly bookkeeping to keep your finances accurate and organized.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center p-4">
+          <h5>Tax Preparation</h5>
+          <p>Personal and business tax preparation with maximum deductions.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center p-4">
+          <h5>BIR Registration</h5>
+          <p>Register your business in the most efficient way.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="text-center mt-4">
+      <a href="services.html" class="btn btn-gold btn-lg">View More Services</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="section-title">Why Choose Estrada Accounting?</h2>
+        <p>
+          We provide personalized accounting and bookkeeping services designed
+          to help small businesses stay compliant and financially confident.
+        </p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="images/EstradaOfficialLogo.png" alt="Logo" height="160">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- CTA -->
+<section class="cta text-center py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Let’s Simplify Your Finances</h2>
+    <p class="mb-4">Get expert accounting and bookkeeping support to focus on growing your business.</p>
+    <a href="contact.html" class="btn btn-dark btn-lg">Contact Us Today</a>
+  </div>
+</section>
+
+
+
+
+<!-- INQUIRIES / CONTACT FORM -->
+<section class="inquiries py-5" style="background-color: var(--light-bg);">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4" style="color: var(--gold-dark2);">Have Any Questions?</h2>
+    <p class="text-center mb-5 text-dark">Fill out the form below and our team will get back to you promptly.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form action="#" method="POST" class="p-4 shadow rounded bg-white">
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Full Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="subject" class="form-label fw-bold">Subject</label>
+            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label fw-bold">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-gold btn-lg">Submit Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="py-5" style="background-color: whitesmoke;">
+  <div class="container">
+    <div class="row align-items-start">
+
+      <!-- Logo & Tagline -->
+      <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+        <img src="images/EstradaOfficialLogo.png" alt="Estrada Accounting Logo" height="50" class="mb-2">
+        <p class="mb-1 fw-bold">Professional • Reliable • Confidential</p>
+        <p class="small text-muted">Helping small businesses stay financially confident since 2017.</p>
+        <!-- Optional Social Icons -->
+        <div class="mt-2">
+          <a href="#" class="text-dark me-3 fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-dark me-3 fs-5"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-dark fs-5"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4 mb-md-0 text-center">
+        <h6 class="fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html active" class="footer-link">Home</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 text-center text-md-end">
+        <h6 class="fw-bold mb-3">Contact Us</h6>
+        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>09397202659</p>
+        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i>compliance.estradabookkeeping@gmail.com</p>
+        <p class="mb-0"><i class="bi bi-geo-alt-fill me-2"></i>F. Llamas St., Punta Princessa, Cebu City, Philippines</p>
+      </div>
+
+    </div>
+
+    <hr class="my-4">
+
+    <div class="text-center small text-muted">
+      &copy; 2025 Estrada Accounting & Bookkeeping. All rights reserved.
+    </div>
+  </div>
+</footer>

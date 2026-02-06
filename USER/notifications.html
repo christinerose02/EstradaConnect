@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notifications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+      <img src="images/EstradaOfficialLogo.png" alt="Logo" height="50" class="me-2">
+      Estrada Accounting & Bookkeeping Services
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <a class="nav-link consultation-link" href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#consultationModal">
+          Book A Consultation
+        </a>
+
+        <!-- Notification Bell -->
+        <li class="nav-item position-relative">
+          <a class="nav-link d-flex align-items-center" href="notifications.html" style="position: relative;">
+            <i class="bi bi-bell fs-5"></i>
+            <span id="notificationBadge" class="badge bg-danger rounded-pill"
+                  style="position: absolute; top: -5px; right: -10px; font-size: 0.65rem; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center;">
+              0
+            </span>
+          </a>
+        </li>
+
+        <!-- User Icon -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="signin.html">
+            <i class="bi bi-person-circle me-1"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="container" style="padding-top: 100px;"> <!-- padding for fixed navbar -->
+  <h2 class="mb-4">Notifications</h2>
+
+  <!-- Recent Notifications -->
+  <h5>Recent</h5>
+  <div class="list-group mb-4" id="recentNotifications">
+    <!-- Filled dynamically -->
+  </div>
+
+  <!-- Earlier Notifications -->
+  <h5>Earlier</h5>
+  <div class="list-group mb-4" id="earlierNotifications">
+    <!-- Filled dynamically -->
+  </div>
+
+  <!-- Clear Notifications Button -->
+  <div class="text-end mb-5">
+    <button class="btn btn-outline-danger" id="clearNotifications">
+      <i class="bi bi-trash me-1"></i> Clear All Notifications
+    </button>
+  </div>
+</div>
+
+<!-- Notification Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="modalTitle" class="modal-title fw-bold"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p id="modalMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Notifications Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const recentList = document.getElementById('recentNotifications');
+  const earlierList = document.getElementById('earlierNotifications');
+  const badge = document.getElementById('notificationBadge');
+
+  // Example notifications
+  let notifications = [
+    { title: 'Consultation Request Confirmed', message: 'Your consultation for Tax Preparation on Jan 12, 2026 has been confirmed.', date: '2026-01-09', time: 'New' },
+    { title: 'Invoice Ready', message: 'Your invoice for Bookkeeping Services is now available.', date: '2026-01-08', time: '1h ago' },
+    { title: 'Reminder', message: 'Your consultation for Payroll Services is scheduled for Jan 15, 2026.', date: '2026-01-05', time: 'Upcoming' }
+  ];
+
+  const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMessage = document.getElementById('modalMessage');
+
+  function renderNotifications() {
+    recentList.innerHTML = '';
+    earlierList.innerHTML = '';
+
+    if (notifications.length === 0) {
+      recentList.innerHTML = '<p class="text-muted text-center py-3">No notifications.</p>';
+      earlierList.innerHTML = '';
+      badge.textContent = '';
+      return;
+    }
+
+    const today = new Date().toISOString().split('T')[0];
+
+    notifications.forEach((n) => {
+      const item = document.createElement('a');
+      item.href = '#';
+      item.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-start';
+      item.innerHTML = `
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">${n.title}</div>
+          ${n.message.substring(0, 50)}...
+        </div>
+        <span class="badge ${n.time === 'New' ? 'bg-success' : 'bg-primary'} rounded-pill">${n.time}</span>
+      `;
+
+      // Click opens modal with full details
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalTitle.textContent = n.title;
+        modalMessage.textContent = n.message;
+        notificationModal.show();
+      });
+
+      if (n.date === today) {
+        recentList.appendChild(item);
+      } else {
+        earlierList.appendChild(item);
+      }
+    });
+
+    // Update badge with number of "New" notifications
+    badge.textContent = notifications.filter(n => n.time === 'New').length || '';
+  }
+
+  renderNotifications();
+
+  // Clear all notifications
+  document.getElementById('clearNotifications').addEventListener('click', () => {
+    notifications = [];
+    renderNotifications();
+  });
+});
+</script>
+
+</body>
+</html>

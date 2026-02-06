@@ -1,0 +1,613 @@
+:root {
+  --gold: #D4AF37;
+  --gold-dark: #B8860B;
+  --gold-dark2: #704E06;
+  --light-bg: #f8f9fa;
+  --dark-text: #212529;
+}
+
+/* GLOBAL */
+body {
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  padding-top: 70px;
+}
+
+
+
+
+
+/* NAVBAR */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--gold-dark);
+}
+
+.navbar-brand{
+    color: var(--gold-dark2) !important;
+    font-weight: 700;
+
+}
+
+
+.nav-link {
+  color: var(--dark-text) !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--gold-dark) !important;
+}
+
+
+.navbar .nav-link i {
+  font-size: 1.3rem;
+  color: var(--gold-dark2);
+}
+
+.navbar .nav-link:hover i {
+  color: var(--gold);
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link.active {
+    color: var(--gold);
+}
+
+
+
+
+.navbar .nav-link.consultation-link {
+  color: var(--light-bg) !important;
+  padding: 8px;
+  background: var(--dark-text);
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.navbar .nav-link.consultation-link:hover {
+  background: var(--gold-dark2);
+  color: var(--light-bg) !important;
+  transition: all 0.4s ease;
+}
+
+
+
+
+
+
+
+/* HERO */
+.hero {
+  position: relative;
+  background: url("../images/hero_bg.jfif") center/cover no-repeat;
+  padding: 140px 0;
+  color: #ffffff;
+}
+
+/* Overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: #f1f1f1;
+}
+
+
+
+
+
+
+
+
+
+/* BUTTONS */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark2), var(--gold));
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  padding: 0.65rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+}
+
+/* Hover effect */
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark2));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Active / Focus state */
+.btn-gold:focus,
+.btn-gold:active {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.3); /* subtle gold focus ring */
+}
+
+
+
+
+
+
+
+
+
+/* SECTION TITLES */
+.section-title {
+  color: var(--gold-dark);
+}
+
+/* CARDS */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card h5 {
+  color: var(--gold-dark);
+}
+
+
+
+
+
+/* GOLD TEXT FOR NUMBERS AND ICONS */
+.text-gold {
+  color: var(--gold-dark2);
+}
+
+/* CLIENTS & STATS CARDS */
+.impact-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.impact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.impact-card i {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+/* Section Title Styling */
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #B8860B;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .impact-card {
+    margin: 0 auto;
+    max-width: 250px;
+  }
+}
+
+
+
+
+
+/* Cards for Mission, Vision, Expertise, Team */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* Card Icons */
+.card i {
+    font-size: 2.5rem;
+    color: #B8860B;
+}
+
+/* Team Section */
+.card img {
+    border-radius: 50%;
+    border: 3px solid #B8860B;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Team Member Name and Role */
+.card h5 {
+    font-weight: 700;
+    margin-top: 1rem;
+    color: #333;
+}
+.card p {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+
+
+
+
+/* ABOUT SECTION */
+.about .section-title {
+  color: var(--gold-dark2);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about ul li {
+  font-size: 1.05rem;
+  color: var(--dark-text);
+}
+
+.about ul li i {
+  font-size: 1.2rem;
+}
+
+.about p {
+  font-size: 1rem;
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+/* Carousel Container */
+.team-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px;
+
+}
+
+/* Track */
+.team-track {
+  display: flex;
+  gap: 30px; /* spacing between cards */
+
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+
+.team-card {
+  flex: 0 0 28%; /* wider cards, adjusts visible per row */
+  margin: 5rem 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+}
+
+.team-card img {
+  width: 180px; /* bigger profile image */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+
+.team-card.center {
+  transform: scale(1.25);   /* standout center card */
+  z-index: 10;             /* above other cards */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Scroll Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #B8860B;
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.carousel-btn:hover { opacity: 1; }
+.carousel-left { left: 10px; }
+.carousel-right { right: 10px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #212529, #343a40); /* dark gray gradient */
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  padding: 4rem 1rem;
+}
+
+.cta h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.cta p {
+  color: #e9ecef; /* light text for readability */
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta .btn-dark {
+  background-color: black;
+  border-radius: 50px;
+  color: var(--light-bg);
+  font-weight: 400;
+  font-size: 18px;
+  border: none;
+}
+
+.cta .btn:hover {
+  background-color: var(--gold-dark2);
+}
+
+
+
+
+
+
+
+/* INQUIRIES */
+.inquiries h2 {
+  font-size: 2rem;
+}
+
+.inquiries p {
+  font-size: 1.05rem;
+}
+
+.inquiries form {
+  transition: all 0.3s ease;
+}
+
+.inquiries form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.inquiries .form-control {
+  border-radius: 6px;
+  box-shadow: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inquiries .form-control:focus {
+  border-color: var(--gold-dark2);
+  box-shadow: 0 0 8px rgba(184, 134, 11, 0.2);
+}
+
+.inquiries .btn-gold {
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+/* FOOTER */
+footer {
+  color: var(--dark-text);
+  font-size: 0.95rem;
+}
+
+footer h6 {
+  color: var(--gold-dark2);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+  color: var(--dark-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--gold-dark2);
+}
+
+footer hr {
+  border-color: rgba(0,0,0,0.4);
+}
+
+footer i {
+  transition: color 0.3s ease;
+}
+
+footer a.text-dark:hover i {
+  color: var(--gold-dark2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   PROFESSIONAL AUTH PAGES
+========================= */
+
+.auth-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-bg);
+}
+
+/* Auth Card */
+.auth-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 2.5rem 2.2rem;
+  max-width: 420px;
+  width: 100%;
+  border-top: 5px solid var(--gold-dark2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Logo */
+.auth-card img {
+  height: 55px;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.auth-card h3 {
+  color: var(--gold-dark2);
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+
+/* Labels */
+.auth-card .form-label {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Inputs */
+.auth-card .form-control {
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.auth-card .form-control:focus {
+  border-color: var(--gold-dark2);
+  box-shadow: 0 0 0 2px rgba(112, 78, 6, 0.15);
+}
+
+/* Button */
+.auth-card .btn-gold {
+  width: 100%;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  padding: 0.6rem;
+  margin-top: 0.75rem;
+  text-transform: none; /* professional */
+}
+
+/* Footer text */
+.auth-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Links */
+.auth-card a {
+  color: var(--gold-dark2);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}

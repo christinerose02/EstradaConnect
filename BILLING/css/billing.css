@@ -1,0 +1,178 @@
+/* =========================
+   BILLING PAGE ONLY
+========================= */
+
+/* Page Title */
+.billing-page h3 {
+  font-weight: 700;
+}
+
+
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  min-height: 100vh;
+  background-color: var(--admin-bg);
+}
+
+.sidebar h5 {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.sidebar a {
+  color: #d1d5db;
+  padding: 10px 12px;
+  border-radius: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+.sidebar a i {
+  color: var(--gold-dark);
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: var(--admin-hover);
+  color: var(--gold);
+}
+
+.sidebar a:hover i,
+.sidebar a.active i {
+  color: var(--gold);
+}
+
+
+
+
+/* =========================
+   STATS CARDS
+========================= */
+.billing-stats .card {
+  border-left: 4px solid var(--gold-dark);
+}
+
+.billing-stats h6 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-text);
+}
+
+.billing-stats h4 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* Status emphasis */
+.billing-stats .overdue h4 {
+  color: #dc3545;
+}
+
+/* =========================
+   FILTER CARD
+========================= */
+.billing-filters {
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+}
+
+.billing-filters label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* =========================
+   BILLING TABLE
+========================= */
+.billing-table th {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #374151;
+}
+
+.billing-table td {
+  font-size: 0.95rem;
+}
+
+/* Amount column */
+.billing-table td.amount {
+  font-weight: 600;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+.badge-paid {
+  background-color: #198754;
+}
+
+.badge-pending {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge-overdue {
+  background-color: #dc3545;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.billing-actions .btn {
+  padding: 0.25rem 0.45rem;
+  font-size: 0.85rem;
+}
+
+.billing-actions .btn-outline-primary {
+  border-color: var(--gold-dark);
+  color: var(--gold-dark);
+}
+
+.billing-actions .btn-outline-primary:hover {
+  background-color: var(--gold-dark);
+  color: #fff;
+}
+
+/* =========================
+   INVOICE VIEW (FUTURE USE)
+========================= */
+.invoice-card {
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
+.invoice-header {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.invoice-header h5 {
+  font-weight: 700;
+}
+
+.invoice-total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold-dark2);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .billing-stats .card {
+    border-left: none;
+    border-top: 4px solid var(--gold-dark);
+  }
+
+  .billing-actions {
+    text-align: left;
+  }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+      <img src="images/EstradaOfficialLogo.png" height="50" class="me-2">
+      Estrada Accounting & Bookkeeping Services
+    </a>
+
+    <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link consultation-link" href="#">Book A Consultation</a>
+        </li>
+
+        <!-- Notification Icon -->
+        <li class="nav-item position-relative">
+          <a class="nav-link d-flex align-items-center" href="notifications.html">
+            <i class="bi bi-bell fs-5"></i>
+
+            <!-- Notification Badge -->
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              3
+              <span class="visually-hidden">unread notifications</span>
+            </span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="signin.html">
+            <i class="bi bi-person-circle fs-5"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center py-5" style="margin-top: 70px;">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Contact <span>Us</span></h1>
+    <p class="lead mt-3">
+      Get in touch with our accounting experts today
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- CONTACT FORM -->
+      <div class="col-md-6">
+        <h3 class="fw-bold mb-4">Send Us a Message</h3>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="your@email.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-control" placeholder="Inquiry Subject">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold px-4">
+            <i class="bi bi-send me-1"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="col-md-6">
+        <h3 class="fw-bold mb-4">Contact Information</h3>
+
+        <p class="mb-3">
+          <i class="bi bi-telephone-fill me-2 text-gold"></i>
+          0939 720 2659
+        </p>
+
+        <p class="mb-3">
+          <i class="bi bi-envelope-fill me-2 text-gold"></i>
+          compliance.estradabookkeeping@gmail.com
+        </p>
+
+        <p class="mb-4">
+          <i class="bi bi-geo-alt-fill me-2 text-gold"></i>
+          F. Llamas St., Punta Princessa,<br>
+          Cebu City, Philippines
+        </p>
+
+        <!-- MAP PLACEHOLDER -->
+        <div class="ratio ratio-16x9 rounded shadow">
+          <iframe
+            src="https://www.google.com/maps?q=Cebu%20City&output=embed"
+            style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta text-center py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Let’s Work Together</h2>
+    <p class="mb-4">
+      Schedule a consultation and let us handle your accounting needs.
+    </p>
+    <a href="#" class="btn btn-gold btn-lg">Book A Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-5" style="background-color: whitesmoke;">
+  <div class="container text-center small text-muted">
+    &copy; 2025 Estrada Accounting & Bookkeeping. All rights reserved.
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
