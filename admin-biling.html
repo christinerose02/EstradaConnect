@@ -1,222 +1,161 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin/Billing Login & Signup</title>
-<style>
-:root {
-  --gold: #D4AF37;
-  --gold-dark: #B8860B;
-  --gold-dark2: #704E06;
-  --light-bg: #f8f9fa;
-  --dark-text: #212529;
-  --input-border: #dcdcdc;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrada Personnel Portal</title>
 
-/* GLOBAL */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--light-bg);
-  color: var(--dark-text);
-  margin: 0;
-  padding: 0;
-}
-
-/* AUTH PAGE */
-.auth-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-/* AUTH CARD */
-.auth-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  max-width: 420px;
-  width: 100%;
-  border-top: 6px solid var(--gold-dark2);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.auth-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
-}
-
-/* TITLE */
-.auth-card h3 {
-  color: var(--gold-dark2);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-  letter-spacing: 0.5px;
-}
-
-/* INPUTS */
-.auth-card input {
-  width: 100%;
-  padding: 0.75rem 0.9rem;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-  border: 1px solid var(--input-border);
-  font-size: 0.95rem;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
-
-.auth-card input:focus {
-  border-color: var(--gold-dark2);
-  box-shadow: 0 0 8px rgba(112,78,6,0.2);
-  outline: none;
-}
-
-/* BUTTON */
-.auth-card button {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, var(--gold-dark2), var(--gold));
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.auth-card button:hover {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark2));
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
-}
-
-/* FOOTER TEXT */
-.auth-card p {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 1rem;
-}
-
-/* LINKS */
-.auth-card a {
-  color: var(--gold-dark2);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.auth-card a:hover {
-  text-decoration: underline;
-}
-
-/* MESSAGE */
-#message {
-  text-align: center;
-  margin-bottom: 15px;
-  font-weight: 500;
-  min-height: 18px;
-  transition: color 0.3s ease;
-}
-
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  .auth-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .auth-card h3 {
-    font-size: 1.5rem;
-  }
-}
-</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin-billing.css">
 </head>
 <body>
 
-<div class="auth-page">
-  <div class="auth-card">
-    <h3 id="form-title">LOG IN AS ESTRADA PERSONNEL</h3>
-    <div id="message"></div>
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button id="submitBtn">Login</button>
-    <p id="toggleFormText">Don't have an account? <a href="#" id="toggleForm">Sign Up</a></p>
+<div class="auth-card">
+  <h3 id="form-title">Login as Estrada Personnel</h3>
+  <div id="message"></div>
+
+  <!-- LOGIN FIELDS -->
+  <div id="loginFields">
+    <div class="input-group">
+      <input type="text" id="loginUsername" placeholder=" " required>
+      <label>Username</label>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="loginPassword" placeholder=" " required>
+      <label>Password</label>
+    </div>
+  </div>
+
+  <!-- SIGNUP FIELDS -->
+  <div id="signupFields" style="display:none;">
+    <div class="input-group">
+      <input type="text" id="firstName" placeholder=" ">
+      <label>First Name</label>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="lastName" placeholder=" ">
+      <label>Last Name</label>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="createPassword" placeholder=" ">
+      <label>Create Password</label>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="confirmPassword" placeholder=" ">
+      <label>Confirm Password</label>
+    </div>
+  </div>
+
+  <button id="submitBtn">Login</button>
+
+  <div class="auth-footer">
+    <span id="toggleText">
+      Don’t have an account?
+      <a href="#" id="toggleForm">Sign Up</a>
+    </span>
   </div>
 </div>
 
 <script>
 let isLogin = true;
-const toggleForm = document.getElementById('toggleForm');
+const users = [];
+
 const formTitle = document.getElementById('form-title');
 const submitBtn = document.getElementById('submitBtn');
 const message = document.getElementById('message');
+const toggleText = document.getElementById('toggleText');
+const loginFields = document.getElementById('loginFields');
+const signupFields = document.getElementById('signupFields');
 
-// In-memory "database"
-const users = [];
-
-toggleForm.addEventListener('click', (e) => {
-  e.preventDefault();
-  isLogin = !isLogin;
-  if(isLogin){
-    formTitle.textContent = "LOG IN AS ESTRADA PERSONNEL";
-    submitBtn.textContent = "Login";
-    document.getElementById('toggleFormText').innerHTML = 'Don\'t have an account? <a href="#" id="toggleForm">Sign Up</a>';
-  } else {
-    formTitle.textContent = "SIGN UP AS ESTRADA PERSONNEL";
-    submitBtn.textContent = "Sign Up";
-    document.getElementById('toggleFormText').innerHTML = 'Already have an account? <a href="#" id="toggleForm">Login</a>';
+document.addEventListener("click", function(e) {
+  if (e.target && e.target.id === "toggleForm") {
+    e.preventDefault();
+    toggleForm();
   }
-  message.textContent = '';
-  document.getElementById('toggleForm').addEventListener('click', toggleFormHandler);
 });
 
-function toggleFormHandler(e){
-  e.preventDefault();
-  toggleForm.click();
+function toggleForm() {
+  isLogin = !isLogin;
+
+  if (isLogin) {
+    formTitle.textContent = "Login as Estrada Personnel";
+    submitBtn.textContent = "Login";
+    loginFields.style.display = "block";
+    signupFields.style.display = "none";
+    toggleText.innerHTML =
+      'Don’t have an account? <a href="#" id="toggleForm">Sign Up</a>';
+  } else {
+    formTitle.textContent = "Sign Up as Estrada Personnel";
+    submitBtn.textContent = "Create Account";
+    loginFields.style.display = "none";
+    signupFields.style.display = "block";
+    toggleText.innerHTML =
+      'Already have an account? <a href="#" id="toggleForm">Login</a>';
+  }
+
+  message.textContent = "";
 }
 
 submitBtn.addEventListener('click', () => {
-  const username = document.getElementById('username').value.trim();
-  const password = document.getElementById('password').value.trim();
 
-  if(!username || !password){
-    message.style.color = 'red';
-    message.textContent = "Please fill all fields!";
-    return;
-  }
+  if (isLogin) {
+    const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
 
-  if(isLogin){
+    if (!username || !password) {
+      message.style.color = "red";
+      message.textContent = "Please fill all fields.";
+      return;
+    }
+
     const user = users.find(u => u.username === username && u.password === password);
-    if(user){
-      message.style.color = 'green';
-      message.textContent = `Welcome, ${username}!`;
+
+    if (user) {
+      message.style.color = "green";
+      message.textContent = `Welcome back, ${user.firstName}!`;
     } else {
-      message.style.color = 'red';
-      message.textContent = "Invalid username or password!";
+      message.style.color = "red";
+      message.textContent = "Invalid credentials.";
     }
+
   } else {
-    if(users.find(u => u.username === username)){
-      message.style.color = 'red';
-      message.textContent = "Username already exists!";
-    } else {
-      users.push({username, password});
-      message.style.color = 'green';
-      message.textContent = "Account created! You can login now.";
-      setTimeout(() => {
-        toggleForm.click();
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
-        message.textContent = '';
-      }, 1500);
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const createPassword = document.getElementById('createPassword').value.trim();
+    const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+    if (!firstName || !lastName || !createPassword || !confirmPassword) {
+      message.style.color = "red";
+      message.textContent = "Please fill all fields.";
+      return;
     }
+
+    if (createPassword !== confirmPassword) {
+      message.style.color = "red";
+      message.textContent = "Passwords do not match.";
+      return;
+    }
+
+    const username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+
+    users.push({
+      username,
+      firstName,
+      lastName,
+      password: createPassword
+    });
+
+    message.style.color = "green";
+    message.textContent = "Account created successfully! Your username is: " + username;
+
+    setTimeout(toggleForm, 2000);
   }
 });
 </script>

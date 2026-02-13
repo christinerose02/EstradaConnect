@@ -1,0 +1,150 @@
+:root {
+  --primary: #704E06;
+  --primary-light: #D4AF37;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY WITH IMAGE BACKGROUND */
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('AdminMainWallpaper.avif');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.auth-card {
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  animation: fadeIn 0.6s ease;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITLE */
+.auth-card h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+/* MESSAGE */
+#message {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+/* FLOATING INPUT */
+.input-group {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  font-size: 0.9rem;
+  color: #777;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(112,78,6,0.1);
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 8px;
+  font-size: 0.75rem;
+  background: white;
+  padding: 0 6px;
+  color: var(--primary);
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(112,78,6,0.3);
+}
+
+/* FOOTER */
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+}
